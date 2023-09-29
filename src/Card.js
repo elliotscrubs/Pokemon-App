@@ -26,13 +26,13 @@ function Card(props) {
   }, []);
 
   return (
-    <div>
-      <img src={pokemonData.image} alt='pokemonImage' className='images'></img>
-      <p>#{pokemonData.id}</p>
-      <p>{pokemonData.name}</p>
-      {pokemonData.types && pokemonData.types.map((type, i) => {
-        return <div key={i}>{type}</div>;
-      })}
+    <div className="main">      
+        <img src={pokemonData.image} alt='pokemonImage' className='images'></img>
+        <p className="pokeId">#{pokemonData.id}</p>
+        <p className="pokeName">{pokemonData.name}</p>
+        {pokemonData.types && pokemonData.types.map((type, i) => {
+          return <div className="pokeType" key={i}>{type}</div>;
+        })}
     </div>
   );
 };
