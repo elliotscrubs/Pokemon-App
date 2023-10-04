@@ -1,12 +1,26 @@
+import React, {useState} from "react";
 import './Card.css';
 import Card from './Card';
 import TextField from '@mui/material/TextField';
 
 const App = () => {
-  var array = [];
+  const [idList, setIdList] = useState(() => {
+    var array  = [];
+    
+    for (var i = 1; i <= 12; i++) {
+      array.push(i);      
+    }
+    return array;
+  });
+  
 
-  for (var i = 1; i <= 151; i++) {
-    array.push(i);
+  const loadMore = () => { 
+    var array = [...idList]
+
+    for (var i = idList.length + 1; i <= idList.length + 12; i++) {
+      array.push(i);      
+    };
+    setIdList(array)
   }
 
   return (
@@ -23,10 +37,11 @@ const App = () => {
         </div>
       </div>
       <div className='container'>
-        {array.map(id => {
+        {idList.map(id => {
           return <Card id={id}>{id}</Card>;
         })}
       </div>
+      <button onClick={loadMore} className="loadButton"> Load More </button>
     </>
   );
 };
