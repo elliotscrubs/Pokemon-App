@@ -26,7 +26,7 @@ function Card(props) {
   }, []);
 
   return (
-    <div className="main">      
+    <div className="card">      
         <img src={pokemonData.image} alt='pokemonImage' className='images'></img>
         <p className="pokeId">#{pokemonData.id}</p>
         <p className="pokeName">{pokemonData.name}</p>
