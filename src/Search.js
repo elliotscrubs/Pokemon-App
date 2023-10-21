@@ -24,10 +24,6 @@ function Search(props) {
     console.log(pokemonNameList);
   }, []);
 
-  const handleMenuChange = value => {
-    console.log(`handleMenuChange value ${value} `);
-  };
-
   return (
     <div className='searchContainer'>
       <h1>Pokemon Search</h1>
@@ -36,7 +32,7 @@ function Search(props) {
           options={pokemonNameList.map(pokemon => {
             return pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
           })}
-          onChange={(event, value) => handleMenuChange(value)}
+          onChange={(event, value) => props.handleSearchChange(value)}
           renderInput={params => (
             <TextField
               {...params}
