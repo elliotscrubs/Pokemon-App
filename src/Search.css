@@ -1,0 +1,12 @@
+.search {
+  text-align: center;
+  width: 30em;
+}
+
+.searchContainer {
+  text-align: center;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

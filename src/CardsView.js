@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Card from './Card';
-import './App.css';
 
 function CardsView() {
   const [idList, setIdList] = useState(() => {
