@@ -24,7 +24,7 @@ function CardsView() {
     <>
       <div className='container'>
         {idList.map(id => {
-          return <Card id={id}>{id}</Card>;
+          return <Card key={id} id={id} />;
         })}
       </div>
       <button onClick={loadMore} className='loadButton'>
