@@ -5,12 +5,12 @@ import DetailView from './DetailView';
 import './App.css';
 
 const App = () => {
-  const [searchedName, setSearchedName] = useState(null);
+  const [searchedPokemonsUrl, setSearchedPokemonsUrl] = useState(null);
 
   return (
     <>      
-      <Search handleSearchChange={value => setSearchedName(value)} />
-      {searchedName ? <DetailView name={searchedName} /> : <CardsView />} 
+      <Search handleSearchChange={value => setSearchedPokemonsUrl(value)} />
+      {searchedPokemonsUrl ? <DetailView pokemonsUrl={searchedPokemonsUrl} /> : <CardsView />} 
     </>
   );
 };

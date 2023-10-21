@@ -5,7 +5,7 @@ import { Autocomplete } from '@mui/material';
 import './Search.css';
 
 function Search(props) {
-  const [pokemonNameList, setPokemonNameList] = useState([]);
+  const [pokemonList, setPokemonList] = useState([]);
 
   useEffect(() => {
     const url = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=2000';
@@ -14,14 +14,13 @@ function Search(props) {
       try {
         const response = await fetch(url);
         const json = await response.json();
-        setPokemonNameList(json.results);
+        setPokemonList(json.results);
       } catch (error) {
         console.log('error', error);
       }
     };
 
     fetchData();
-    console.log(pokemonNameList);
   }, []);
 
   return (
@@ -29,10 +28,13 @@ function Search(props) {
       <h1>Pokemon Search</h1>
       <div className='search'>
         <Autocomplete
-          options={pokemonNameList.map(pokemon => {
-            return pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-          })}
-          onChange={(event, value) => props.handleSearchChange(value)}
+          options={pokemonList}
+          getOptionLabel={option =>
+            option.name.charAt(0).toUpperCase() + option.name.slice(1)
+          }
+          onChange={(event, value) => {
+            props.handleSearchChange(value.url);
+          }}
           renderInput={params => (
             <TextField
               {...params}
