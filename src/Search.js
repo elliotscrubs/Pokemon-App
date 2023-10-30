@@ -33,7 +33,7 @@ function Search(props) {
             option.name.charAt(0).toUpperCase() + option.name.slice(1)
           }
           onChange={(event, value) => {
-            props.handleSearchChange(value.url);
+            props.handleSearchChange(value?.url ? value.url : null );
           }}
           renderInput={params => (
             <TextField

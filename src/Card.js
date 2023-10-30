@@ -15,7 +15,7 @@ function Card(props) {
           image: json.sprites.other['official-artwork'].front_default,
           id: json.id,
           name: json.name,
-          types: json.types.map(typeEntry => typeEntry.type.name),
+          types: json.types.map(typeEntry => typeEntry.type.name)          
         });
       } catch (error) {
         console.log('error', error);
@@ -31,7 +31,7 @@ function Card(props) {
         <p className="pokeId">#{pokemonData.id}</p>
         <p className="pokeName">{pokemonData.name}</p>
         {pokemonData.types && pokemonData.types.map((type, i) => {
-          return <div className="pokeType" key={i}>{type}</div>;
+          return <div key={i}>{type}</div>;
         })}
     </div>
   );

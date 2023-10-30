@@ -28,8 +28,7 @@ function CardsView() {
         })}
       </div>
       <button onClick={loadMore} className='loadButton'>
-        {' '}
-        Load More{' '}
+        Load More
       </button>
     </>
   );

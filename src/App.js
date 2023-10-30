@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>      
       <Search handleSearchChange={value => setSearchedPokemonsUrl(value)} />
-      {searchedPokemonsUrl ? <DetailView pokemonsUrl={searchedPokemonsUrl} /> : <CardsView />} 
+      {searchedPokemonsUrl ? <DetailView pokemonsUrl={searchedPokemonsUrl} handleSearchChange={value => setSearchedPokemonsUrl(value)} /> : <CardsView />} 
     </>
   );
 };
