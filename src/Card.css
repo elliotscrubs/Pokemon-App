@@ -4,6 +4,7 @@
     background-color: rgb(182, 177, 177);
     margin-top: 20px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .container { 

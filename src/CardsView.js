@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Card from './Card';
 
-function CardsView() {
+function CardsView(props) {
   const [idList, setIdList] = useState(() => {
     var array = [];
 
@@ -24,7 +24,13 @@ function CardsView() {
     <>
       <div className='container'>
         {idList.map(id => {
-          return <Card key={id} id={id} />;
+          return (
+            <Card
+              key={id}
+              id={id}
+              handleSearchChange={props.handleSearchChange}
+            />
+          );
         })}
       </div>
       <button onClick={loadMore} className='loadButton'>

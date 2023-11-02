@@ -24,11 +24,11 @@ function DetailView(props) {
           height: jsonPokemon.height,
           weight: jsonPokemon.weight,
           habitat: jsonSpecies.habitat.name,
-          flavorText: jsonSpecies.flavor_text_entries[0].flavor_text.replace(
-            /\u000c/g,
-            ' '
-          ),
-        });
+          flavorText: jsonSpecies.flavor_text_entries
+            .filter(flavor_text => flavor_text.language.name === 'en' ? flavor_text : '')
+              .map(text => text.flavor_text.replace(/\u000c/g,
+              ' '))
+        })
       } catch (error) {
         console.log('error', error);
       }

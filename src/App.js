@@ -8,9 +8,16 @@ const App = () => {
   const [searchedPokemonsUrl, setSearchedPokemonsUrl] = useState(null);
 
   return (
-    <>      
+    <>
       <Search handleSearchChange={value => setSearchedPokemonsUrl(value)} />
-      {searchedPokemonsUrl ? <DetailView pokemonsUrl={searchedPokemonsUrl} handleSearchChange={value => setSearchedPokemonsUrl(value)} /> : <CardsView />} 
+      {searchedPokemonsUrl ? (
+        <DetailView
+          pokemonsUrl={searchedPokemonsUrl}
+          handleSearchChange={value => setSearchedPokemonsUrl(value)}
+        />
+      ) : (
+        <CardsView handleSearchChange={value => setSearchedPokemonsUrl(value)} />
+      )}
     </>
   );
 };

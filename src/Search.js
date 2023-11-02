@@ -19,7 +19,6 @@ function Search(props) {
         console.log('error', error);
       }
     };
-
     fetchData();
   }, []);
 
