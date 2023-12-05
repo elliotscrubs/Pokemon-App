@@ -1,56 +1,87 @@
-.detailCard { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  width: 100vw;
 }
 
-.detailsContainer { 
-    padding-right: 10px;
-    font-size: 20px;
-    flex-direction: row;
-    width: 50%;
-    padding-left: 50px;
+.detailCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.detailsPokeId { 
-    color: brown;
-    font-size: 30px;
-    margin: 0;
+.detailsContainer {
+  font-size: 20px;
+  width: 50%;
+  padding-left: 50px;
+}
+
+.detailsPokeId {
+  color: brown;
+  font-size: 30px;
+  margin: 0;
 }
 
 .detailsPokeName {
-    text-transform: capitalize;
-    color: blue;
-    font-weight: bold;
-    font-size: 30px;
+  text-transform: capitalize;
+  color: blue;
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.description { 
-    color: rgb(213, 136, 136);
-    font-style: italic;
+.description {
+  color: rgb(213, 136, 136);
+  font-style: italic;
 }
- 
-p { 
-    line-height: 1.5;
-    margin: 5px;
- }
 
- .backButton { 
-    font-size: 25px; 
-    color:rgb(69, 8, 126);
-    background-color: lightseagreen;
-    cursor: pointer;   
-    position: relative;
-    top: -40px;
-    left: 100px;
- }
+p {
+  line-height: 1.5;
+  margin: 5px;
+}
 
- .table { 
+.backButton {
+  font-size: 25px;
+  color: rgb(69, 8, 126);
+  background-color: lightseagreen;
+  cursor: pointer;
+  position: relative;
+  top: -40px;
+  left: 100px;
+}
+
+.table {
+  display: flex;
+}
+
+.detailImages {
+  width: 20%;
+}
+
+@media only screen and (max-width: 640px) {
+  .backButton {
+    left: 20px;
+    font-size: 15px;
+  }
+  .detailCard {
+    font-size: 8px;
     display: flex;
-    flex-direction: row;  
- }
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .detailsPokeName,
+  .detailsPokeId {
+    font-size: 20px;
+  }
+  .detailImages {
+    width: 40%;
+  }
+  .detailsContainer {
+    width: 100%;
+  }
+  .table {
+    flex-direction: column;
+    display: flex;
+  }
+  p {
 
- .detailImages {
-    width: 20%;
-    padding-right: 30px;
- }
+  }
+}
