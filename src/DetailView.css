@@ -81,7 +81,11 @@ p {
     flex-direction: column;
     display: flex;
   }
-  p {
-
+  p, span {
+    font-size: 12px;
+  }
+  p { 
+    width: 90%;
+    margin-bottom: 15px;
   }
 }
